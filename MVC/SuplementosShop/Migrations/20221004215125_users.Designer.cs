@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SuplementosShop.Areas.Identity.Data;
 
@@ -11,9 +12,10 @@ using SuplementosShop.Areas.Identity.Data;
 namespace SuplementosShop.Migrations
 {
     [DbContext(typeof(SuplementosShopContext))]
-    partial class SuplementosShopContextModelSnapshot : ModelSnapshot
+    [Migration("20221004215125_users")]
+    partial class users
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,15 +168,15 @@ namespace SuplementosShop.Migrations
                         {
                             Id = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "48c97b6e-7b14-4e12-bc5a-b98f604c658f",
+                            ConcurrencyStamp = "e11c116b-f5f5-44bf-ad0d-1191cc087888",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMNhyEfN8cSma+ATzaUs9Gm+DbY00l7DKt1tZGQDi2so6Iu7ZOfflB6m1U4R9Sl7LA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH099CK2kbbt+GCS/wjg/LkgwP9xvHi17PCpG7N7IlXrSGjZuIwlF5A3vjLE+z3USQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cb13ab03-a366-4b91-a09f-39b4712ae22a",
+                            SecurityStamp = "31d05b71-8c23-4e00-bbf2-fbb489512dd2",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         },
@@ -182,15 +184,15 @@ namespace SuplementosShop.Migrations
                         {
                             Id = "563bcc80-16ed-4f79-83d4-ed3fe59a933c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c725147d-6a20-4590-818e-8cb661dedaf3",
+                            ConcurrencyStamp = "6339a2bf-9235-4c41-9c4b-884fb8142aa4",
                             Email = "customer@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER@GMAIL.COM",
                             NormalizedUserName = "CUSTOMER",
-                            PasswordHash = "AQAAAAEAACcQAAAAENtBt28jHwPovcxk8cDD9PDiy2j2ZmQlfbNx7rwhf/xP539aa2wtdOfT9BCKYmRZOQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHm+46giT75k8DneubQDrqfrxuanr1G+n3d8s07sD0Lx2Tk0bzYaiugYJCZcTB1+4A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9b1910cc-0c7a-4c04-845c-3a2a04bbb1d2",
+                            SecurityStamp = "3bd0e38e-0fe2-45f3-b1cd-07ec02c8e452",
                             TwoFactorEnabled = false,
                             UserName = "Customer"
                         },
@@ -198,15 +200,15 @@ namespace SuplementosShop.Migrations
                         {
                             Id = "0fbd4a36-8062-42af-912e-fa22aa808bbf",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bac7473d-8875-4023-b0db-caac4517072e",
+                            ConcurrencyStamp = "ebd3e454-f96e-493c-8475-9b0ac4f57c1e",
                             Email = "employee@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "EMPLOYEE@GMAIL.COM",
                             NormalizedUserName = "EMPLOYEE",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMZRvqH2kmY66bs7MJibgpwI1Hs6g9/n1ZXoEsChtBH/M5KJpJAnfUocfYF7l+kKeQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH3XXKgZF14ZeEYq55+W6eysb/hOshwWqJjkW+BfA3qLmGg/6isejJAk67BegiEODg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4085f3bb-31bc-4aa3-864b-8ec8a0986095",
+                            SecurityStamp = "fb9141e3-6f5b-47ee-bc35-acfb79c48c21",
                             TwoFactorEnabled = false,
                             UserName = "Employee"
                         });
@@ -327,13 +329,6 @@ namespace SuplementosShop.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Carts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            UserId = "563bcc80-16ed-4f79-83d4-ed3fe59a933c"
-                        });
                 });
 
             modelBuilder.Entity("SuplementosShop.Entities.CartItem", b =>

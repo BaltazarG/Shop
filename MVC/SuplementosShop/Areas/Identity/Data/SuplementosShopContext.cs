@@ -86,6 +86,13 @@ public class SuplementosShopContext : IdentityDbContext<IdentityUser>
             UserId = CUSTOMER_ID
         });
 
+        builder.Entity<Cart>().HasData(new Cart
+        {
+            UserId = CUSTOMER_ID,
+            Id = 1,
+        });
+
+
         string EMPLOYEE_ROLE = "e6c36ff5-f673-4745-bf9d-7b321388ed38";
         builder.Entity<IdentityRole>().HasData(new IdentityRole
         {
