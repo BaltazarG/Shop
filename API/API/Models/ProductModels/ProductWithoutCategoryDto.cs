@@ -1,8 +1,6 @@
-﻿using API.Models.CategoryModels;
-
-namespace API.Models.ProductModels
+﻿namespace API.Models.ProductModels
 {
-    public class ProductDto
+    public class ProductWithoutCategoryDto
     {
         public int Id { get; set; }
 
@@ -15,7 +13,5 @@ namespace API.Models.ProductModels
         public string ImageUrl { get; set; } = string.Empty;
 
         public int CategoryId { get; set; }
-
-        public virtual CategoryWithoutProductsDto Category { get; set; }
     }
 }

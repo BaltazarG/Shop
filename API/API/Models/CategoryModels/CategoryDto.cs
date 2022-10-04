@@ -9,6 +9,6 @@ namespace API.Models.CategoryModels
 
         public string ShortDescription { get; set; } = string.Empty;
 
-        public virtual ICollection<ProductDto> Products { get; set; } = new List<ProductDto>() { };
+        public virtual ICollection<ProductWithoutCategoryDto> Products { get; set; } = new List<ProductWithoutCategoryDto>() { };
     }
 }

@@ -17,6 +17,10 @@ namespace API.Profiles
 
             CreateMap<Category, CategoryDto>();
             CreateMap<CategoryDto, Category>();
+
+
+            CreateMap<Category, CategoryWithoutProductsDto>();
+            CreateMap<CategoryWithoutProductsDto, Category>();
         }
     }
 }
