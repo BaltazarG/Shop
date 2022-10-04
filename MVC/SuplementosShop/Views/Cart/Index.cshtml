@@ -1,0 +1,85 @@
+﻿
+@model CartViewModel
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center gap-1">
+        <h1>Cart</h1>
+        <h3>(@Model.CartQuantity)</h3>
+    </div>
+
+    <a class="btn btn-primary" asp-area="" asp-controller="Market" asp-action="Index">Back to market</a>
+</div>
+<div class="d-flex">
+    <h4>Total Price: $</h4>
+    <h4>@Model.TotalPrice</h4>
+</div>
+
+
+
+
+    @if(Model.CartItems.Count() > 0)
+    {
+        <div class="w-100">
+            <div class="row row-cols-4">
+                @foreach (var item in Model.CartItems)
+                {
+                         <div class="col mb-2">
+                             <div class="card" style="width: 18rem;">
+                                <img src=@item.Product.ImageUrl class="card-img-top" height="255" alt=@item.Product.Name>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex w-75">
+                                            <h5 class="fw-bold">$@item.Product.Price - </h5>
+                                            <h5 class="mx-1 text-secondary">@item.Product.Category.Name</h5>
+                                        </div>
+
+                                        <div class="d-flex justify-content-end w-25">
+                                            <h5 class="mx-1 text-secondary">
+                                                x<span class="fs-4">@item.Quantity</span>
+                                            </h5>
+                                        </div>
+                                       
+                                    </div>
+                                    <h5 class="card-title">@item.Product.Name</h5>  
+                                    <p class="card-text">@item.Product.Description</p>
+                                    <div class="d-flex w-100 justify-content-end gap-1">
+                                        <form method="post" asp-controller="Cart" asp-action="Edit" class="d-flex justify-content-end gap-1">
+
+                                        
+
+                                            <input asp-for=CurrentCartItemId hidden value=@item.Id />
+
+                                            <input value="@item.Quantity" asp-for="QuantityUpdated" class="form-control p-0 m-0 text-center w-25" min="1" />
+
+                                            <button type="submit" class="btn btn-outline-warning" value="Edit">Edit</button>
+
+                                        </form>
+
+
+                                        <form method="post" asp-controller="Cart" asp-action="Delete" class="">
+
+                                        
+
+                                            <input asp-for=CurrentCartItemId hidden value=@item.Id />
+
+                                            <button type="submit" class="btn btn-danger" value="Index">Delete</button>
+                                        </form>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                         </div>
+               
+                } 
+            </div>
+        </div>
+    } else {<h5 class="text-warning">No products yet!</h5>}
+
+
+
