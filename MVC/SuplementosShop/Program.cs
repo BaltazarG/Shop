@@ -11,7 +11,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Traigo el connection string y creo el context con sql server
+// Traigo el connection string y creo el context con sqlServer
 var connectionString = builder.Configuration.GetConnectionString("SuplementosShopContextConnection") ?? throw new InvalidOperationException("Connection string 'SuplementosShopContextConnection' not found.");
 
 builder.Services.AddDbContext<SuplementosShopContext>(options =>
