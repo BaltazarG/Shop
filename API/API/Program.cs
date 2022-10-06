@@ -13,7 +13,7 @@ using API.Services.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+// tst
 
 var connectionString = builder.Configuration.GetConnectionString("SuplementosShopContextConnection") ?? throw new InvalidOperationException("Connection string 'SuplementosShopContextConnection' not found.");
 
